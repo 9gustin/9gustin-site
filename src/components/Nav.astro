@@ -1,0 +1,16 @@
+---
+interface Props { active?: string }
+const { active } = Astro.props;
+const links = [
+  { id: 'inicio', href: '/', label: 'inicio' },
+  { id: 'proyectos', href: '/proyectos', label: 'proyectos' },
+  { id: 'notas', href: '/notas', label: 'notas' },
+  { id: 'sobre-mi', href: '/sobre-mi', label: 'sobre mí' },
+];
+---
+<nav class="nav" aria-label="Principal">
+  <a class="brand" href="/">agus vazquez</a>
+  {links.map((l) => (
+    <a href={l.href} aria-current={active === l.id ? 'page' : undefined}>{l.label}</a>
+  ))}
+</nav>

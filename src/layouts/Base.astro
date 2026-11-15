@@ -1,0 +1,50 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  active?: 'inicio' | 'proyectos' | 'notas' | 'sobre-mi';
+  bareNav?: boolean; // la home dibuja su propio nav dentro del encabezado
+}
+const {
+  title,
+  description = 'Agustín Vazquez, desarrollador frontend en Córdoba. Proyectos y notas sobre cómo se construye software hoy.',
+  image = '/plates/fern.jpg',
+  active,
+  bareNav = false,
+} = Astro.props;
+const fullTitle = title ? `${title} · 9gustin` : '9gustin · Agustín Vazquez';
+const ogImage = new URL(image, Astro.site ?? Astro.url).href;
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site ?? Astro.url)} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=Work+Sans:wght@400;500&display=swap"
+    />
+  </head>
+  <body>
+    {!bareNav && <Nav active={active} />}
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

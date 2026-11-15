@@ -1,0 +1,19 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { mesAnio, minutosDeLectura } from '../lib/content';
+
+interface Props { n: CollectionEntry<'notas'> }
+const { n } = Astro.props;
+const d = n.data;
+---
+<a class="note" href={`/notas/${n.id}`}>
+  <div class="th"><img src={d.planta.imagen} alt={`Lámina de ${d.planta.nombre}`} loading="lazy" /></div>
+  <div>
+    <span class="tt">{d.titulo}</span>
+    <span class="sp">{d.planta.nombre}</span>
+  </div>
+  <span class="m">
+    {mesAnio(d.fecha)} · {minutosDeLectura(n.body)} min
+    {d.borrador && <span class="draft">borrador</span>}
+  </span>
+</a>

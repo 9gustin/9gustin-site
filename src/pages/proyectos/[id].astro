@@ -1,0 +1,35 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { getProyectos, tab } from '../../lib/content';
+
+export async function getStaticPaths() {
+  const proyectos = await getProyectos();
+  return proyectos.map((p, i) => ({ params: { id: p.id }, props: { p, i } }));
+}
+const { p, i } = Astro.props;
+const d = p.data;
+const { Content } = await render(p);
+---
+<Base title={d.titulo} description={d.resumen} image={d.planta.imagen} active="proyectos">
+  <article class="article">
+    <aside class="plate-big">
+      <img src={d.planta.imagen} alt={`Lámina de ${d.planta.nombre}`} />
+      <p class="fig">{d.planta.nombre}{d.planta.fuente && ` — ${d.planta.fuente}`}</p>
+      {d.planta.porQue && <p class="why">{d.planta.porQue}</p>}
+    </aside>
+    <div style="min-width:0">
+      <a class="back" href="/proyectos">← proyectos</a>
+      <h1>{d.titulo}</h1>
+      <div class="meta">
+        <span>{tab(i)}</span>
+        <span>{d.fecha.getUTCFullYear()}</span>
+        {d.destacado && <span>{d.destacado}</span>}
+        {d.repo && <a href={d.repo} target="_blank" rel="noopener">código</a>}
+        {d.sitio && <a href={d.sitio} target="_blank" rel="noopener">ver online</a>}
+      </div>
+      {d.stack.length > 0 && <ul class="chips">{d.stack.map((s) => <li>{s}</li>)}</ul>}
+      <div class="prose"><Content /></div>
+    </div>
+  </article>
+</Base>

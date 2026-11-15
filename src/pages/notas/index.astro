@@ -1,0 +1,21 @@
+---
+import Base from '../../layouts/Base.astro';
+import NoteRow from '../../components/NoteRow.astro';
+import NotasVacias from '../../components/NotasVacias.astro';
+import { getNotas } from '../../lib/content';
+
+const notas = await getNotas();
+---
+<Base title="Notas" active="notas" description="Notas sobre ingeniería y el desarrollo de software hoy.">
+  <div class="page">
+    <div class="page-head">
+      <p class="fig">Cuaderno de campo</p>
+      <h1 class="display">Notas sobre el <i>oficio</i>.</h1>
+      <p class="lede">Análisis y observaciones sobre cómo se construye software hoy. Algunas son ideas terminadas, otras siguen creciendo.</p>
+    </div>
+    <div class="sect"><h2>Todas las notas</h2><span>{notas.length}</span></div>
+    <div class="notes">
+      {notas.length ? notas.map((n) => <NoteRow n={n} />) : <NotasVacias />}
+    </div>
+  </div>
+</Base>

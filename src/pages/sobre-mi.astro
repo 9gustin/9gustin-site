@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+import { social } from '../lib/social';
+---
+<Base title="Sobre mí" active="sobre-mi" image="/plates/monstera.jpg">
+  <div class="page-head page">
+    <p class="fig">Sobre mí</p>
+    <h1 class="display">Hola, soy <i>Agus</i>.</h1>
+  </div>
+  <div class="about">
+    <div class="prose">
+      <p>Soy desarrollador frontend y vivo en Córdoba, Argentina. Trabajo principalmente con TypeScript, React y Next.js, y me gusta armar herramientas chicas que resuelvan un problema concreto: cuándo pasa el colectivo, cómo mostrar una página de Notion en React, qué canción escuchar después.</p>
+      <p>Este sitio es mi herbario. En <a href="/proyectos">proyectos</a> junto lo que fui construyendo, con el problema que resolvía y cómo lo encaré. En <a href="/notas">notas</a> escribo sobre ingeniería y sobre cómo está cambiando el desarrollo de software.</p>
+      <p>Además de código, me gustan las plantas. Por eso cada proyecto y cada nota tiene su lámina botánica de portada.</p>
+    </div>
+    <aside>
+      <img src="/plates/monstera.jpg" alt="Grabado de Monstera deliciosa de 1875" />
+      <dl class="facts">
+        <div><dt>base</dt><dd>Córdoba, Argentina</dd></div>
+        <div><dt>hago</dt><dd>Frontend · TypeScript · React · Next.js</dd></div>
+        <div><dt>encontrame</dt><dd>{social.map((s, i) => <>{i > 0 && ' · '}<a href={s.href} target="_blank" rel="me noopener">{s.label}</a></>)}</dd></div>
+      </dl>
+    </aside>
+  </div>
+</Base>

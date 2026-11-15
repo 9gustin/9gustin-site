@@ -1,0 +1,15 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { tab } from '../lib/content';
+
+interface Props { p: CollectionEntry<'proyectos'>; i: number }
+const { p, i } = Astro.props;
+const d = p.data;
+---
+<a class="plate" href={`/proyectos/${p.id}`}>
+  <div class="cover"><img src={d.planta.imagen} alt={`Lámina de ${d.planta.nombre}`} loading="lazy" /></div>
+  <div class="tab"><span>{tab(i)}</span><span>{d.destacado ?? d.fecha.getUTCFullYear()}</span></div>
+  <h3>{d.titulo}</h3>
+  <span class="sp">{d.planta.nombre}</span>
+  <p>{d.resumen}</p>
+</a>

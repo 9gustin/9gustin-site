@@ -1,0 +1,36 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Plate from '../components/Plate.astro';
+import NoteRow from '../components/NoteRow.astro';
+import NotasVacias from '../components/NotasVacias.astro';
+import { getProyectos, getNotas } from '../lib/content';
+
+const proyectos = await getProyectos();
+const notas = (await getNotas()).slice(0, 4);
+---
+<Base bareNav>
+  <header class="top">
+    <div class="art"><img src="/plates/fern.jpg" alt="Lámina de Ernst Haeckel con helechos cuerno de alce en tinta verde" /></div>
+    <div class="body">
+      <Nav active="inicio" />
+      <div class="hero">
+        <h1>Formas que crecen, <i>software</i> que también.</h1>
+        <p class="fig">Fig. 1 — Platycerium, el helecho cuerno de alce</p>
+        <p class="intro">Desarrollador frontend en Córdoba. Construyo herramientas chicas y útiles y escribo sobre el oficio de hacer software hoy.</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="page">
+    <div class="sect"><h2>Proyectos</h2><a href="/proyectos">{proyectos.length} especímenes · ver todos →</a></div>
+    <div class="plates">
+      {proyectos.slice(0, 4).map((p, i) => <Plate p={p} i={i} />)}
+    </div>
+
+    <div class="sect"><h2>Notas</h2><a href="/notas">cuaderno de campo · ver todas →</a></div>
+    <div class="notes">
+      {notas.length ? notas.map((n) => <NoteRow n={n} />) : <NotasVacias />}
+    </div>
+  </div>
+</Base>

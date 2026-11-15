@@ -1,0 +1,33 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { getNotas, fechaLarga, minutosDeLectura } from '../../lib/content';
+
+export async function getStaticPaths() {
+  const notas = await getNotas();
+  return notas.map((n) => ({ params: { id: n.id }, props: { n } }));
+}
+const { n } = Astro.props;
+const d = n.data;
+const { Content } = await render(n);
+---
+<Base title={d.titulo} description={d.resumen} image={d.planta.imagen} active="notas">
+  <article class="article">
+    <aside class="plate-big">
+      <img src={d.planta.imagen} alt={`Lámina de ${d.planta.nombre}`} />
+      <p class="fig">{d.planta.nombre}{d.planta.fuente && ` — ${d.planta.fuente}`}</p>
+      {d.planta.porQue && <p class="why">{d.planta.porQue}</p>}
+    </aside>
+    <div style="min-width:0">
+      <a class="back" href="/notas">← notas</a>
+      {d.borrador && <span class="draft">borrador · no se publica</span>}
+      <h1>{d.titulo}</h1>
+      <div class="meta">
+        <span>{fechaLarga(d.fecha)}</span>
+        <span>{minutosDeLectura(n.body)} min</span>
+        {d.tags.map((t) => <span>#{t}</span>)}
+      </div>
+      <div class="prose"><Content /></div>
+    </div>
+  </article>
+</Base>

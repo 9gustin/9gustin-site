@@ -1,0 +1,20 @@
+---
+import Base from '../../layouts/Base.astro';
+import Plate from '../../components/Plate.astro';
+import { getProyectos } from '../../lib/content';
+
+const proyectos = await getProyectos();
+---
+<Base title="Proyectos" active="proyectos" description="Productos y soluciones que armé, cada uno con su lámina.">
+  <div class="page">
+    <div class="page-head">
+      <p class="fig">Herbario de proyectos</p>
+      <h1 class="display">Lo que fui <i>plantando</i>.</h1>
+      <p class="lede">Productos, librerías y páginas que armé. Cada uno cuenta qué problema resolvía y cómo lo encaré.</p>
+    </div>
+    <div class="sect"><h2>Especímenes</h2><span>{proyectos.length} en total</span></div>
+    <div class="plates">
+      {proyectos.map((p, i) => <Plate p={p} i={i} />)}
+    </div>
+  </div>
+</Base>
