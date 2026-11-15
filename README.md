@@ -40,7 +40,7 @@ Los proyectos llevan además `resumen`, `orden`, `stack`, `repo`, `sitio` y `des
 
 Todas las láminas son de dominio público, tomadas de Wikimedia Commons:
 
-- Camellia sinensis, Papaver somniferum, Theobroma cacao y Coffea arabica: *Köhler's Medizinal-Pflanzen* (1887)
+- Camellia sinensis, Papaver somniferum, Theobroma cacao, Coffea arabica, Ilex paraguariensis, Juglans regia, Olea europaea y Calendula officinalis: *Köhler's Medizinal-Pflanzen* (1887)
 - Echeveria canaliculata: *Curtis's Botanical Magazine* (1857)
 - Filicinae: Ernst Haeckel, *Kunstformen der Natur* (1904)
 - Monstera deliciosa: revista *Vesmír* (1875)
