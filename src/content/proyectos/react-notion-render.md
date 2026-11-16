@@ -2,7 +2,7 @@
 titulo: react-notion-render
 resumen: Librería para renderizar páginas de Notion en React.
 fecha: 2021-05-15
-orden: 2
+orden: 3
 stack: [TypeScript, React, Notion API, npm]
 repo: https://github.com/9gustin/react-notion-render
 sitio: https://www.npmjs.com/package/@9gustin/react-notion-render
