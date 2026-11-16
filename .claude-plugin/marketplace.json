@@ -1,0 +1,11 @@
+{
+  "name": "9gustin",
+  "owner": { "name": "9gustin" },
+  "plugins": [
+    {
+      "name": "9gustin-portfolio",
+      "source": "./plugin",
+      "description": "Skills para trabajar sobre el portfolio de 9gustin: contexto del sitio, nuevas notas y nuevos proyectos."
+    }
+  ]
+}

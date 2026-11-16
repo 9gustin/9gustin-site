@@ -37,6 +37,22 @@ planta:
 
 Los proyectos llevan además `resumen`, `orden`, `stack`, `repo`, `sitio`, `destacado` y `enProgreso` (opcionales). El esquema completo está en `src/content.config.ts`.
 
+## Skills para Claude
+
+En `plugin/skills/` hay tres skills para trabajar el sitio desde cualquier chat de Claude Code:
+
+- `portfolio-9gustin`: el contexto del sitio (rutas, comandos, esquemas, diseño, voz y cómo publicar). Su `reference.md` es la fuente de verdad.
+- `nueva-nota`: investigar, escribir y publicar una nota (borrador, en progreso o terminada).
+- `nuevo-proyecto`: sumar o actualizar un proyecto, incluida la revisión de secretos antes de hacer público un repo.
+
+Para instalarlos o actualizarlos en Windows (los copia a `~/.claude/skills`):
+
+```bash
+wsl.exe -d Ubuntu -- bash ~/projects/9gustin-site/plugin/instalar.sh
+```
+
+También se pueden instalar como plugin desde el marketplace del repo (`.claude-plugin/marketplace.json`).
+
 ## Láminas
 
 Todas las láminas son de dominio público, tomadas de Wikimedia Commons:

@@ -16,5 +16,6 @@ const d = n.data;
     {mesAnio(d.fecha)} · {minutosDeLectura(n.body)} min
     {d.borrador && <span class="draft">borrador</span>}
     {d.ejemplo && <span class="draft">ejemplo</span>}
+    {d.enProgreso && <span class="badge badge-inline">en progreso</span>}
   </span>
 </a>

@@ -34,6 +34,8 @@ const notas = defineCollection({
     tags: z.array(z.string()).default([]),
     borrador: z.boolean().default(false),
     ejemplo: z.boolean().default(false), // texto provisorio: se publica con una etiqueta "ejemplo"
+    enProgreso: z.boolean().default(false), // investigación en proceso: se publica y avisa que sigue creciendo
+    actualizada: z.coerce.date().optional(), // última vez que se trabajó una nota en progreso
     planta,
   }),
 });

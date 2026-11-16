@@ -78,6 +78,8 @@ main { display: block; }
 
 /* láminas de proyectos */
 .badge { justify-self: start; width: fit-content; font-family: var(--mono); font-size: 11px; letter-spacing: .04em; color: var(--leaf); border: 1px solid var(--leaf); padding: 1px 8px; border-radius: 999px; }
+.badge-inline { margin-left: 6px; font-size: 10px; vertical-align: middle; }
+.growing { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; margin: 0 0 20px; padding: 10px 14px; background: var(--leaf-soft); color: var(--ink-2); font-size: 14px; border-radius: 6px; max-width: 64ch; }
 .plates { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 280px)); gap: 36px 28px; padding: 24px var(--g) 48px; }
 .plate { display: grid; gap: 8px; min-width: 0; align-content: start; }
 .plate .cover { aspect-ratio: 4 / 5; background: #fff; border: 1px solid var(--frame); overflow: hidden; display: grid; place-items: center; }

@@ -23,8 +23,15 @@ const { Content } = await render(n);
       {d.borrador && <span class="draft">borrador · no se publica</span>}
       {d.ejemplo && <span class="draft">nota de ejemplo · texto provisorio</span>}
       <h1>{d.titulo}</h1>
+      {d.enProgreso && (
+        <p class="growing">
+          <span class="badge">en progreso</span>
+          Es una investigación en proceso: la nota sigue creciendo y puede cambiar o tener partes sin terminar.
+        </p>
+      )}
       <div class="meta">
         <span>{fechaLarga(d.fecha)}</span>
+        {d.actualizada && <span>actualizada {fechaLarga(d.actualizada)}</span>}
         <span>{minutosDeLectura(n.body)} min</span>
         {d.tags.map((t) => <span>#{t}</span>)}
       </div>
