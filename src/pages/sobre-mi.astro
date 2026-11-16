@@ -1,6 +1,17 @@
 ---
 import Base from '../layouts/Base.astro';
-import { social } from '../lib/social';
+
+// Recorrido profesional, del más reciente al más viejo.
+const experiencia = [
+  { desde: '2025', hasta: 'hoy', puesto: 'Software Engineer', lugar: 'Mercado Libre' },
+  { desde: '2023', hasta: '2025', puesto: 'Frontend Developer', lugar: 'COR' },
+  { desde: '2022', hasta: '2023', puesto: 'Frontend Developer', lugar: 'Treinta' },
+  { desde: '2021', hasta: '2022', puesto: 'Frontend Developer', lugar: 'Wolox' },
+  { desde: '2019', hasta: '2020', puesto: 'Desarrollador React, JS y .NET', lugar: 'Fidelitytools' },
+];
+const formacion = [
+  { desde: '2017', hasta: '2018', puesto: 'Técnico Superior en Programación', lugar: 'UTN' },
+];
 ---
 <Base title="Sobre mí" active="sobre-mi" image="/plates/monstera.jpg">
   <div class="page-head page">
@@ -9,17 +20,33 @@ import { social } from '../lib/social';
   </div>
   <div class="about">
     <div class="prose">
-      <p>Soy desarrollador <s>frontend</s>. Empecé en frontend, pero hoy uno hace de todo, y yo estoy en eso: expandiéndome hacia el resto del producto. Trabajo principalmente con TypeScript, React y Next.js, y me gusta armar herramientas chicas que resuelvan un problema concreto, como saber cuándo pasa el colectivo o mostrar una página de Notion en React.</p>
-      <p>Me gustan las plantas y el software, y las dos cosas crecen parecido: de a poco y con cuidado. Armé este espacio para explorar la ingeniería de software: cómo hacer productos de calidad hoy con la IA en el medio, y cómo está cambiando el rol del desarrollador.</p>
-      <p>Este sitio es mi herbario. En <a href="/proyectos">proyectos</a> exploro tecnologías y distintas formas de programar con IA, y las pruebo en problemas del día a día. En <a href="/notas">notas</a>, todavía en construcción, voy a escribir sobre ingeniería y sobre cómo está cambiando el desarrollo de software. Cada proyecto y cada nota tiene su lámina botánica de portada.</p>
+      <p>Soy desarrollador <s>frontend</s> hace más de 7 años. Hoy trabajo como Software Engineer en Mercado Libre. React es donde más horas tengo, pero hace rato que hago de todo: Next.js, Node, SQL, integraciones con AWS. Y me sigo expandiendo hacia el producto completo.</p>
+      <p>Me gustan las plantas y el software, y las dos cosas crecen parecido: de a poco y con cuidado. Armé este espacio para explorar la ingeniería de software: cómo hacer productos de calidad hoy, con la IA en el medio, y cómo está cambiando nuestro rol.</p>
     </div>
     <aside>
       <img src="/plates/monstera.jpg" alt="Grabado de Monstera deliciosa de 1875" />
-      <dl class="facts">
-        <div><dt>hago</dt><dd><s>Frontend</s> de todo · TypeScript · React · Next.js</dd></div>
-        <div><dt>exploro</dt><dd>IA aplicada al desarrollo · calidad de producto</dd></div>
-        <div><dt>encontrame</dt><dd>{social.map((s, i) => <>{i > 0 && ' · '}<a href={s.href} target="_blank" rel="me noopener">{s.label}</a></>)}</dd></div>
-      </dl>
+      <div>
+        <p class="tl-title">Recorrido</p>
+        <ol class="tl">
+          {experiencia.map((e) => (
+            <li><span class="yr">{e.desde} – {e.hasta}</span><span><b>{e.puesto}</b><br />{e.lugar}</span></li>
+          ))}
+        </ol>
+        <p class="tl-title" style="margin-top:20px">Formación</p>
+        <ol class="tl">
+          {formacion.map((e) => (
+            <li><span class="yr">{e.desde} – {e.hasta}</span><span><b>{e.puesto}</b><br />{e.lugar}</span></li>
+          ))}
+        </ol>
+      </div>
     </aside>
   </div>
 </Base>
+
+<style>
+  .tl-title { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 500; margin: 0 0 6px; }
+  .tl { list-style: none; margin: 0; padding: 0; display: grid; }
+  .tl li { display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 12px; padding: 10px 0; border-top: 1px solid var(--hair); font-size: 14px; color: var(--ink-2); line-height: 1.4; }
+  .tl b { font-family: var(--display); font-size: 19px; font-weight: 500; color: var(--ink); }
+  .yr { font-family: var(--mono); font-size: 12px; color: var(--leaf); padding-top: 4px; white-space: nowrap; }
+</style>
