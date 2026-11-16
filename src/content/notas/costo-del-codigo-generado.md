@@ -3,14 +3,13 @@ titulo: El costo oculto del código generado
 resumen: Escribir código nunca fue tan barato. Mantenerlo sigue costando lo mismo.
 fecha: 2026-11-12
 tags: [ingeniería, ia]
+ejemplo: true
 planta:
   imagen: /plates/coffea.jpg
   nombre: Coffea arabica
   fuente: Köhler, 1887
   porQue: Esta nota salió de varias tardes revisando PRs con demasiado café.
 ---
-
-> Nota de ejemplo. El texto es provisorio y va a cambiar.
 
 Escribir código nunca fue tan barato. Leerlo, entenderlo y mantenerlo sigue costando lo mismo que antes, y ahí es donde se acumula la cuenta.
 

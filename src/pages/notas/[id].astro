@@ -21,6 +21,7 @@ const { Content } = await render(n);
     <div style="min-width:0">
       <a class="back" href="/notas">← notas</a>
       {d.borrador && <span class="draft">borrador · no se publica</span>}
+      {d.ejemplo && <span class="draft">nota de ejemplo · texto provisorio</span>}
       <h1>{d.titulo}</h1>
       <div class="meta">
         <span>{fechaLarga(d.fecha)}</span>

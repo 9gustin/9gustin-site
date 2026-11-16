@@ -3,6 +3,7 @@ titulo: El valor de las herramientas chicas
 resumen: Lo que aprendí haciendo apps que resuelven una sola cosa.
 fecha: 2026-08-14
 tags: [producto, side-projects]
+ejemplo: true
 planta:
   imagen: /plates/ilex.jpg
   nombre: Ilex paraguariensis
@@ -10,9 +11,7 @@ planta:
   porQue: La yerba mate. Las herramientas chicas son como un mate, simples y de todos los días.
 ---
 
-> Nota de ejemplo. El texto es provisorio y va a cambiar.
-
-La mayoría de mis proyectos personales hacen una sola cosa: decirte cuándo pasa el colectivo, mostrar un resultado de fútbol, recomendarte una canción. No es falta de ambición, es una forma de trabajar que me gusta cada vez más.
+La mayoría de mis proyectos personales hacen una sola cosa: decirte cuándo pasa el colectivo, mostrar una página de Notion en React. No es falta de ambición, es una forma de trabajar que me gusta cada vez más.
 
 ## Terminar es una habilidad
 

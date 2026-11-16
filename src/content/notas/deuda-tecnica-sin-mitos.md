@@ -3,14 +3,13 @@ titulo: Deuda técnica, sin mitos
 resumen: No toda la deuda es mala, y no todo lo feo es deuda.
 fecha: 2026-09-08
 tags: [ingeniería, arquitectura]
+ejemplo: true
 planta:
   imagen: /plates/juglans.jpg
   nombre: Juglans regia
   fuente: Köhler, 1887
   porQue: El nogal. La deuda técnica es como una nuez, dura de abrir pero con algo útil adentro.
 ---
-
-> Nota de ejemplo. El texto es provisorio y va a cambiar.
 
 "Deuda técnica" se usa para hablar de casi cualquier cosa que no nos gusta del código. Eso le quita utilidad al término. Vale la pena separar algunas ideas.
 

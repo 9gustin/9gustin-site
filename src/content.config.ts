@@ -20,6 +20,7 @@ const proyectos = defineCollection({
     repo: z.string().url().optional(),
     sitio: z.string().url().optional(),
     destacado: z.string().optional(), // ej: "151★"
+    enProgreso: z.boolean().default(false),
     planta,
   }),
 });
@@ -32,6 +33,7 @@ const notas = defineCollection({
     fecha: z.coerce.date(),
     tags: z.array(z.string()).default([]),
     borrador: z.boolean().default(false),
+    ejemplo: z.boolean().default(false), // texto provisorio: se publica con una etiqueta "ejemplo"
     planta,
   }),
 });

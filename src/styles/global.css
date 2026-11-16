@@ -73,7 +73,8 @@ main { display: block; }
 .lede { max-width: 56ch; color: var(--ink-2); margin: 0; font-size: 17px; }
 
 /* láminas de proyectos */
-.plates { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 36px 28px; padding: 24px var(--g) 48px; }
+.badge { justify-self: start; width: fit-content; font-family: var(--mono); font-size: 11px; letter-spacing: .04em; color: var(--leaf); border: 1px solid var(--leaf); padding: 1px 8px; border-radius: 999px; }
+.plates { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 280px)); gap: 36px 28px; padding: 24px var(--g) 48px; }
 .plate { display: grid; gap: 8px; min-width: 0; align-content: start; }
 .plate .cover { aspect-ratio: 4 / 5; background: #fff; border: 1px solid var(--frame); overflow: hidden; display: grid; place-items: center; }
 .plate .cover img { width: 100%; height: 100%; object-fit: contain; padding: 6%; transition: transform .6s ease; }
@@ -141,8 +142,7 @@ main { display: block; }
 .sitefoot .links { display: flex; gap: 16px; flex-wrap: wrap; }
 .sitefoot a:hover { color: var(--ink); }
 
-@media (max-width: 1000px) { .plates { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 460px) { .plates { grid-template-columns: 1fr; } }
+@media (max-width: 520px) { .plates { grid-template-columns: 1fr; } }
 @media (max-width: 760px) {
   .top { grid-template-columns: 1fr; }
   .top .art { height: 300px; order: -1; }

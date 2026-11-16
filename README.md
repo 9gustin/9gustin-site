@@ -26,6 +26,7 @@ titulo: Mi nota
 fecha: 2026-11-15
 tags: [ingeniería]
 borrador: false        # true = solo se ve en desarrollo
+ejemplo: false         # true = se publica con la etiqueta "ejemplo"
 planta:
   imagen: /plates/coffea.jpg
   nombre: Coffea arabica
@@ -34,7 +35,7 @@ planta:
 ---
 ```
 
-Los proyectos llevan además `resumen`, `orden`, `stack`, `repo`, `sitio` y `destacado` (opcional). El esquema completo está en `src/content.config.ts`.
+Los proyectos llevan además `resumen`, `orden`, `stack`, `repo`, `sitio`, `destacado` y `enProgreso` (opcionales). El esquema completo está en `src/content.config.ts`.
 
 ## Láminas
 
