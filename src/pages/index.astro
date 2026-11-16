@@ -17,18 +17,21 @@ const notas = (await getNotas()).slice(0, 4);
       <div class="hero">
         <h1>Formas que crecen, <i>software</i> que también.</h1>
         <p class="fig">Fig. 1 — Platycerium, el helecho cuerno de alce</p>
-        <p class="intro">Desarrollador frontend en Córdoba. Construyo herramientas chicas y útiles y escribo sobre el oficio de hacer software hoy.</p>
+        <p class="role">desarrollador <s>frontend</s> <span>de todo, y sumando</span></p>
+        <p class="intro">Me gustan las plantas y el software, y las dos cosas crecen parecido: de a poco y con cuidado. Armé este espacio para explorar la ingeniería de software: cómo hacer productos de calidad hoy, con la IA en el medio, y cómo está cambiando el rol de quien desarrolla.</p>
       </div>
     </div>
   </header>
 
   <div class="page">
     <div class="sect"><h2>Proyectos</h2><a href="/proyectos">{proyectos.length} especímenes · ver todos →</a></div>
+    <p class="sect-lede">Acá exploro tecnologías y distintas formas de programar con IA, y las pruebo en problemas del día a día.</p>
     <div class="plates">
       {proyectos.slice(0, 4).map((p, i) => <Plate p={p} i={i} />)}
     </div>
 
     <div class="sect"><h2>Notas</h2><a href="/notas">cuaderno de campo · ver todas →</a></div>
+    <p class="sect-lede">Todavía en construcción. Por ahora son notas de ejemplo.</p>
     <div class="notes">
       {notas.length ? notas.map((n) => <NoteRow n={n} />) : <NotasVacias />}
     </div>

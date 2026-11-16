@@ -54,7 +54,11 @@ main { display: block; }
 }
 .hero h1 i, .display i { color: var(--leaf); }
 .fig { font-family: var(--display); font-style: italic; font-size: 16px; color: var(--leaf); margin: 0; }
-.hero .intro { max-width: 44ch; color: var(--ink-2); margin: 22px 0 0; font-size: 17px; }
+.role { font-family: var(--display); font-size: 26px; line-height: 1.2; margin: 26px 0 0; color: var(--ink); }
+.role s { text-decoration-thickness: 2px; text-decoration-color: var(--leaf); color: var(--leaf-3); }
+.role span { font-style: italic; color: var(--leaf); }
+.hero .intro { max-width: 48ch; color: var(--ink-2); margin: 10px 0 0; font-size: 17px; }
+.sect-lede { margin: 12px var(--g) 0; max-width: 62ch; color: var(--ink-2); font-size: 15px; }
 
 /* secciones */
 .sect {
@@ -116,6 +120,7 @@ main { display: block; }
 .prose p, .prose ul, .prose ol { margin: 0 0 20px; }
 .prose h2 { font-family: var(--display); font-size: 30px; font-weight: 500; line-height: 1.1; margin: 36px 0 12px; }
 .prose h3 { font-family: var(--display); font-size: 24px; font-weight: 500; margin: 28px 0 10px; }
+.prose s, .facts s { text-decoration-color: var(--leaf); color: var(--leaf-3); }
 .prose a { color: var(--leaf); text-decoration: underline; text-underline-offset: 3px; }
 .prose code { font-family: var(--mono); font-size: .82em; background: var(--leaf-soft); padding: 1px 5px; border-radius: 4px; }
 .prose pre { font-family: var(--mono); font-size: 14px; line-height: 1.6; background: #f3f6f2 !important; border: 1px solid #e3e9e2; padding: 14px 16px; overflow-x: auto; border-radius: 6px; margin: 0 0 20px; }
