@@ -111,13 +111,13 @@ planta:
 
 Cuerpo de un proyecto, siempre en este orden: `## El problema`, `## La solución`, `## Cómo está hecho` y, si está en progreso, `## Estado`. El problema se cuenta desde el usuario, con las alternativas que había y por qué no alcanzaban.
 
-Proyectos actuales y su `orden`: cuando-pasa (1), recetario (2), react-notion-render (3). Agus sacó a propósito dj9 y comova: no los vuelvas a sumar.
+Proyectos actuales y su `orden`: broti (1, gana a cuando-pasa por fecha), cuando-pasa (1), recetario (2), react-notion-render (3). Agus sacó a propósito dj9 y comova: no los vuelvas a sumar.
 
 ## Láminas botánicas
 
 Cada nota y cada proyecto tiene una lámina distinta. Son ilustraciones botánicas reales de **dominio público**, nunca dibujos hechos por vos.
 
-En uso: `fern.jpg` (Haeckel, encabezado de la home), `echeveria.jpg` (cuando-pasa), `olea.jpg` (recetario), `camellia.jpg` (react-notion-render), `monstera.jpg` (sobre mí y una nota), `coffea.jpg`, `juglans.jpg`, `ilex.jpg` (notas). De reserva: `calendula.jpg`, `papaver.jpg`, `cacao.jpg`.
+En uso: `fern.jpg` (Haeckel, encabezado de la home), `echeveria.jpg` (cuando-pasa), `olea.jpg` (recetario), `camellia.jpg` (react-notion-render), `monstera.jpg` (sobre mí y una nota), `coffea.jpg`, `juglans.jpg`, `ilex.jpg` (notas), `calendula.jpg` (broti). De reserva: `papaver.jpg`, `cacao.jpg`.
 
 Para conseguir una nueva:
 
