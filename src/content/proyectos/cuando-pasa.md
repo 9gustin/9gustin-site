@@ -3,8 +3,7 @@ titulo: cuando-pasa
 resumen: Tus colectivos de todos los días en un solo lugar, para saber cuándo salir de casa.
 fecha: 2026-11-13
 orden: 1
-enProgreso: true
-stack: [Node.js, SQLite, PWA, JavaScript]
+stack: [Node.js, JavaScript, PWA, Vercel]
 repo: https://github.com/9gustin/cuando-pasa
 sitio: https://cuando-pasa.vercel.app
 planta:
@@ -26,17 +25,25 @@ Las dos están hechas para explorar. Pero el viaje de todos los días no se expl
 
 ## La solución
 
-`cuando-pasa` está pensado para rutinas. Guardás una vez tu rutina, por ejemplo "ida al trabajo", con tu parada y todas las líneas que te sirven. Desde ahí, abrís la app y ves en una sola pantalla cuándo llega cada una.
+`cuando-pasa` está pensado para rutinas. Creás un viaje una vez, por ejemplo "Ir al trabajo": buscás la esquina, elegís hacia dónde vas (hacia el centro o hacia afuera) y la app te muestra la parada de esa vereda con todas las líneas que pasan. El viaje queda fijo en el inicio.
+
+Desde ahí, abrís la app y ves en una sola pantalla todos los colectivos que vienen a tu parada, ordenados por hora.
+
+- **Todos los que vienen**: cada línea con sus próximos dos coches, en cuántos minutos llega, a qué hora y cuántas paradas le faltan. Si el 18 está a una parada y el 19 a seis, lo ves de un vistazo y decidís cuál esperar.
+- **Filtro de líneas**: apagás las que no te sirven y quedan guardadas en el celular.
+- **La calle**: arriba, una franja con los colectivos de los próximos 30 minutos, ubicados según cuánto les falta para llegar.
+- **Desvíos**: si Tu Bondi avisa un desvío, aparece en el colectivo.
+
+Cada colectivo se dibuja como los de la calle: cartel LED ámbar adelante y la franja con el color de su empresa.
 
 El caso principal es la ida y vuelta del trabajo: desde tu casa mirás cuándo pasan tus líneas y calculás cuándo salir, sin llegar a la parada a esperar. Y a la vuelta, lo mismo desde el trabajo.
 
 ## Cómo está hecho
 
-- Una web app instalable (PWA), para tenerla en el celular como cualquier app.
-- Un servidor en Node.js sin dependencias de npm, que toma los datos de Tu Bondi.
+- Una web app instalable (PWA), con HTML, CSS y JavaScript sin framework ni paso de compilación.
+- Un servidor en Node.js sin dependencias de npm. En producción corre como funciones en Vercel.
+- Tu Bondi no tiene una API pública: la app usa los mismos pedidos que su web. El pedido principal trae un solo colectivo por línea, así que se combina con otro que trae todos los que van a pasar, igual que hace la web oficial.
 - Todos los pedidos a Tu Bondi pasan por un único cliente con cola de un pedido por segundo, caché y deduplicación, para no sobrecargar la fuente de datos.
-- Tests con respuestas grabadas, así no dependen de la API en vivo.
-
-## Estado
-
-Está en progreso. Lo estoy usando y ajustando para mis propios viajes.
+- Las paradas que faltan hoy se estiman por distancia. En el repo hay una versión del servidor con SQLite que aprende el orden real de las paradas: el mismo coche aparece en varias paradas con distinta hora estimada, y eso da el orden.
+- Tests con respuestas reales grabadas, así no dependen de la API en vivo.
+- Lo armé con agentes de IA. Con Claude Opus investigué cómo funciona Tu Bondi y escribí el spec, el plan de desarrollo y el diseño. Después Claude Sonnet implementó el plan etapa por etapa, frenando al final de cada una para que yo revisara.
