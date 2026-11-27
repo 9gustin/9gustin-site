@@ -63,11 +63,11 @@ Es el primer proyecto que arranco con [semillero](https://github.com/9gustin/sem
 3. **Ejecución:** Sonnet ejecuta el plan de punta a punta. Cada etapa termina en producción, con su versión en el changelog y su release.
 4. **Prueba:** lo uso, digo qué no me gustó y vuelve al paso 1.
 
-Con este ciclo, la última tanda sumó diez etapas en una noche: de la 0.0.1 a la 0.0.10.
+Con este ciclo, la primera tanda sumó diez etapas en una noche: de la 0.0.1 a la 0.0.10. La segunda fue un rediseño: primero diseñé con el agente cada tarjeta y un onboarding, eligiendo entre propuestas, y después Sonnet lo llevó a producción en nueve etapas, de la 0.0.12 a la 0.0.20.
 
 ## Estado
 
-En producción, en la versión 0.0.10, y probándolo. Lo que sigue:
+En producción, en la versión 0.0.20, y probándolo. La última tanda rediseñó las tarjetas para mostrar una cosa por pantalla, sin nada flotando sobre el chat, y sumó un onboarding paso a paso para configurar avisos, el colectivo, las rutinas y la plata. Lo que sigue:
 
 - Vincular Mercado Pago con un botón, sin pegar claves.
 - La pantallita: el firmware está escrito y lo estoy probando.
