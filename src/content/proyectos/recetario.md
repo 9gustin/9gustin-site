@@ -2,8 +2,9 @@
 titulo: recetario
 resumen: Las recetas de tu casa, compartidas con tu familia, con un plan semanal armado con IA.
 fecha: 2026-11-11
-orden: 2
-enProgreso: true
+orden: 5
+deprecado:
+  en: broti
 stack: [Next.js, TypeScript, Supabase, Claude API, Tailwind, PWA]
 repo: https://github.com/9gustin/recetario
 planta:
@@ -34,6 +35,13 @@ Decidir qué comer todos los días cansa. Las recetas están desparramadas entre
 - La API de Claude para importar recetas, el asistente, los perfiles alimentarios y el plan semanal, con evaluaciones automáticas para medir cada función de IA.
 - Lo estoy construyendo tarea por tarea con agentes de IA: un plan por etapas con criterios de aceptación, distintos modelos para configurar, programar y revisar, y todo documentado en el repo.
 
-## Estado
+## Ahora vive en broti
 
-En progreso. Lo voy construyendo etapa por etapa y sumando funciones.
+Dejé de construirlo como una app aparte. La comida es parte del día, como los pendientes o las rutinas, así que la sumé a [broti](/proyectos/broti), mi asistente para el día a día. No hace falta otra página para esto: alcanza con que esté bien integrado en el asistente.
+
+- **Es un chat:** "contame cómo comés", "hoy almorcé milanesa con ensalada", "¿qué cocino con esto?". Sin pantallas ni formularios.
+- **Queda junto a lo demás:** tus recetas, tu plan de comidas y lo que vas comiendo viven en el mismo lugar que tus pendientes, tus rutinas y tus gastos.
+- **Sugiere con lo tuyo:** propone comidas de tus recetas y de tu plan, y dice de dónde las sacó. No inventa dietas.
+- **La lista de compras** se arma por negocio y se tilda en el súper, como acá.
+
+Recetario sigue online y el código queda en el repo. Lo que todavía no pasó a broti (importar las recetas que ya tenía, el plan semanal desde el plan de la nutricionista) está planificado.

@@ -11,6 +11,7 @@ const d = p.data;
   <div class="tab"><span>{tab(i)}</span><span>{d.destacado ?? d.fecha.getUTCFullYear()}</span></div>
   <h3>{d.titulo}</h3>
   {d.enProgreso && <span class="badge">en progreso</span>}
+  {d.deprecado && <span class="badge badge-off">deprecado · ahora en {d.deprecado.en}</span>}
   <span class="sp">{d.planta.nombre}</span>
   <p>{d.resumen}</p>
 </a>

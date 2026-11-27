@@ -2,7 +2,9 @@
 titulo: cuando-pasa
 resumen: Tus colectivos de todos los días en un solo lugar, para saber cuándo salir de casa.
 fecha: 2026-11-13
-orden: 1
+orden: 4
+deprecado:
+  en: broti
 stack: [Node.js, JavaScript, PWA, Vercel]
 repo: https://github.com/9gustin/cuando-pasa
 sitio: https://cuando-pasa.vercel.app
@@ -47,3 +49,13 @@ El caso principal es la ida y vuelta del trabajo: desde tu casa mirás cuándo p
 - Las paradas que faltan hoy se estiman por distancia. En el repo hay una versión del servidor con SQLite que aprende el orden real de las paradas: el mismo coche aparece en varias paradas con distinta hora estimada, y eso da el orden.
 - Tests con respuestas reales grabadas, así no dependen de la API en vivo.
 - Lo armé con agentes de IA. Con Claude Opus investigué cómo funciona Tu Bondi y escribí el spec, el plan de desarrollo y el diseño. Después Claude Sonnet implementó el plan etapa por etapa, frenando al final de cada una para que yo revisara.
+
+## Ahora vive en broti
+
+Dejé de construirlo como una app aparte. El colectivo es parte del día, así que lo sumé a [broti](/proyectos/broti), mi asistente para el día a día. No hace falta otra página para esto: alcanza con que esté bien integrado en el asistente.
+
+- **Una rutina que avisa:** armás "ir al trabajo" una vez, con tu parada y tus líneas. Todos los días, a la hora de salir, broti te avisa: "salí para el trabajo, el 18 pasa en 6 minutos y el 19 en 12".
+- **Se pregunta charlando:** "¿cuándo pasa el bondi?" te muestra los próximos colectivos de tu parada, con la misma lógica de esta app: todas las líneas juntas, ordenadas por hora.
+- **Queda junto a lo demás:** el viaje aparece en "Ahora", al lado de lo que tenés que hacer en ese momento.
+
+La lógica para hablar con Tu Bondi (la cola de pedidos, la caché, combinar los dos pedidos) se portó tal cual. Cuando-pasa sigue online y el código queda en el repo; la idea es apagarlo cuando broti lo reemplace del todo en mi día a día.

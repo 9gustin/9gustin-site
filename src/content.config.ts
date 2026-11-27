@@ -21,6 +21,8 @@ const proyectos = defineCollection({
     sitio: z.string().url().optional(),
     destacado: z.string().optional(), // ej: "151★"
     enProgreso: z.boolean().default(false),
+    // Proyecto que ya no se sigue por separado: se sumó a otro (ej: "broti").
+    deprecado: z.object({ en: z.string() }).optional(),
     planta,
   }),
 });

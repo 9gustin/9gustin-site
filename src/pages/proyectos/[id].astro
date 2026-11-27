@@ -22,6 +22,11 @@ const { Content } = await render(p);
       <a class="back" href="/proyectos">← proyectos</a>
       <h1>{d.titulo}</h1>
       {d.enProgreso && <p class="badge" style="margin:0 0 14px">en progreso</p>}
+      {d.deprecado && (
+        <p class="badge badge-off" style="margin:0 0 14px">
+          deprecado · ahora en <a href={`/proyectos/${d.deprecado.en}`}>{d.deprecado.en}</a>
+        </p>
+      )}
       <div class="meta">
         <span>{tab(i)}</span>
         <span>{d.fecha.getUTCFullYear()}</span>
